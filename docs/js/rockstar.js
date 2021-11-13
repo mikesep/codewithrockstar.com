@@ -41,7 +41,7 @@ function rock() {
     document.getElementById('program-output').value = '';
     let input = document.getElementById('program-input').value.split(/\r?\n/);
     let source = document.getElementById('program-source').value + "\n\n\n\n\n";
-    window.rockstarWorker = new Worker('/js/worker.js');
+    window.rockstarWorker = new Worker('/codewithrockstar.com/js/worker.js');
     window.rockstarWorker.addEventListener('message', handleMessage);
     window.rockstarWorker.postMessage({ command: 'run', source: source, input: input });
 }
